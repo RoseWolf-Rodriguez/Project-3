@@ -1,0 +1,235 @@
+/* Add your CSS here */
+
+/* Make the header fill the top of the screen */
+header {
+  /* Take at least the full height of the viewport */
+  min-height: 100vh;
+  /* Center content vertically and horizontally */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* Add a gradient background from gray to dark navy blue */
+  background: linear-gradient(to bottom, #cccccc, #43d6fb);
+}
+
+/* Center the content inside the header */
+header > div {
+  /* Center the div horizontally */
+  margin: 0 auto;
+  /* Center all text inside the div */
+  text-align: center;
+}
+
+/* Style the timeline section to scroll horizontally */
+section {
+  /* Use flexbox to arrange cards in a row */
+  display: flex;
+  flex-direction: row;
+  /* Allow horizontal scrolling if cards overflow */
+  overflow-x: auto;
+  /* Add some space below the section */
+  margin-bottom: 20px;
+  /* Add padding for better appearance */
+  padding: 20px 0;
+  /* Prevent vertical scrollbars */
+  overflow-y: hidden;
+  /* Show only 4 cards at a time (4 x 250px + 3 x 16px margin) */
+  max-width: calc(4 * 250px + 3 * 16px);
+  /* Center the timeline section */
+  margin-left: auto;
+  margin-right: auto;
+  /* Enable scroll snap for horizontal scrolling */
+  scroll-snap-type: x mandatory;
+  /* Smooth scrolling for a better experience */
+  scroll-behavior: smooth;
+}
+
+/* Make each timeline card position relative for overlay */
+section > div {
+  /* Add a border and background for visibility */
+  border: 1px solid #ccc;
+  background: #fff;
+  /* Add some space between cards */
+  margin-right: 16px;
+  /* Add padding inside the card */
+  padding: 28px;
+  /* Set a fixed width for each card */
+  width: 250px;
+  /* Make corners slightly rounded */
+  border-radius: 8px;
+  /* Add a little shadow for depth */
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  /* Prevent cards from shrinking too small */
+  flex-shrink: 0;
+  position: relative; /* Needed for overlay positioning */
+  /* Make each timeline card snap into place */
+  scroll-snap-align: start;
+  transition: 
+    transform 0.3s,
+    box-shadow 0.3s;
+}
+
+/* Optional: Remove right margin from the last card */
+section > div:last-child {
+  margin-right: 0;
+}
+
+/* Make images inside timeline cards square and cropped */
+section > div img {
+  /* Set width and height to fill the card width and make it square */
+  width: 100%;
+  height: 250px;
+  /* Crop the image if it's not square */
+  object-fit: cover;
+  /* Add rounded corners to match the card */
+  border-radius: 6px;
+  /* Add some space below the image */
+  margin-bottom: 12px;
+}
+
+/* Overlay for card text, hidden by default */
+section > div .card-overlay {
+  /* Cover the whole card */
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  /* Semi-transparent dark background */
+  background: rgba(10, 25, 49, 0.85);
+  /* White text for contrast */
+  color: #fff;
+  /* Center text vertically and horizontally */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  /* Hide overlay by default */
+  opacity: 0;
+  pointer-events: none;
+  /* Smooth fade-in */
+  transition: opacity 0.3s;
+  /* Rounded corners to match card */
+  border-radius: 8px;
+  /* Padding for readability */
+  padding: 16px;
+  box-sizing: border-box;
+  font-size: 1.15rem; /* Make overlay text a bit bigger for readability */
+  /* Add a slight scale effect for animation */
+  transform: scale(0.97);
+  transition: 
+    opacity 0.3s,
+    transform 0.3s;
+}
+
+/* Show overlay on hover */
+section > div:hover .card-overlay {
+  opacity: 1;
+  pointer-events: auto;
+  /* Slightly scale up the overlay for effect */
+  transform: scale(1.04);
+  /* Add a subtle box-shadow for pop */
+  box-shadow: 0 4px 24px rgba(0,0,0,0.18);
+}
+
+/* Add a hover effect to the card itself */
+section > div:hover {
+  /* Slightly lift the card and add a shadow */
+  transform: translateY(-8px) scale(1.03);
+  box-shadow: 0 8px 32px rgba(0,0,0,0.18);
+  transition: 
+    transform 0.3s,
+    box-shadow 0.3s;
+}
+
+/* Smooth transition for cards */
+section > div {
+  /* ...existing code... */
+  transition: 
+    transform 0.3s,
+    box-shadow 0.3s;
+}
+
+/* Use Roboto for all body text */
+body {
+  font-family: 'Roboto', Arial, sans-serif;
+  /* Add padding around the whole page */
+  padding: 24px;
+  /* Optional: Prevent horizontal scroll caused by padding */
+  box-sizing: border-box;
+  position: relative; /* Needed for overlay positioning */
+  z-index: 1; /* Make sure content is above the overlay */
+}
+
+/* Use IBM Plex Sans for all headings */
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'IBM Plex Sans', Arial, sans-serif;
+}
+
+/* Add a background image overlay to the whole page */
+body::before {
+  content: "";
+  /* Position the overlay to cover the whole page */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  /* Set the background image and make it cover the screen */
+  background: url('img/background.jpg') center center / cover no-repeat;
+  /* Make the image semi-transparent */
+  opacity: 0.25;
+  /* Place the overlay behind all content */
+  z-index: 0;
+  /* Prevent the overlay from blocking clicks */
+  pointer-events: none;
+}
+
+/* Make the timeline cards stack vertically on small screens */
+@media (max-width: 700px) {
+  section {
+    /* Stack cards in a column */
+    flex-direction: column;
+    /* Remove horizontal scroll and snapping */
+    overflow-x: visible;
+    max-width: 100%;
+    scroll-snap-type: none;
+  }
+
+  section > div {
+    /* Remove right margin between cards, add bottom margin instead */
+    margin-right: 0;
+    margin-bottom: 16px;
+    /* Make cards take full width */
+    width: 100%; /* Make cards take full width */
+    max-width: 100%; /* Prevent overflow */
+    min-width: 0;    /* Allow shrinking */
+    box-sizing: border-box; /* Include padding in width */
+  }
+
+  section > div:last-child {
+    margin-bottom: 0;
+  }
+
+  section > div img {
+    /* Make images fit the new card width and keep square shape */
+    width: 100%;
+    height: auto;
+    aspect-ratio: 1 / 1; /* Keep images square */
+    max-width: 100%;
+    min-width: 0;
+    object-fit: cover;
+  }
+}
+
+/* Add more space between the footer and the cards */
+footer {
+  /* Add space above the footer */
+  margin-top: 40px;
+  /* Center the footer text */
+  text-align: center;
+  /* Optional: Make footer text a bit smaller */
+  font-size: 0.95em;
+  /* Optional: Add a lighter color for footer text */
+  color: #333;
+}
