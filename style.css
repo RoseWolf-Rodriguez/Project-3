@@ -233,3 +233,49 @@ footer {
   /* Optional: Add a lighter color for footer text */
   color: #333;
 }
+
+/* Visually hidden but focusable skip link for accessibility */
+.visually-hidden-focusable {
+  position: absolute;
+  left: -9999px;
+  top: auto;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+.visually-hidden-focusable:focus {
+  position: static;
+  width: auto;
+  height: auto;
+  left: 0;
+  background: #fff;
+  color: #007bff;
+  padding: 8px 16px;
+  z-index: 1000;
+  outline: 2px solid #007bff;
+}
+
+/* Ensure focus outlines are visible for accessibility */
+a:focus, button:focus, input:focus, .btn:focus {
+  outline: 2px solid #0056b3 !important;
+  outline-offset: 2px;
+}
+
+/* Improve color contrast for color blindness on buttons and icons */
+.btn-primary, .btn-success, .btn-warning {
+  color: #fff !important;
+  text-shadow: 0 1px 1px rgba(0,0,0,0.08);
+}
+
+/* For .btn-warning, use dark text for better contrast */
+.btn-warning.text-dark {
+  color: #333 !important;
+}
+
+/* Responsive adjustments for newsletter form on small screens */
+@media (max-width: 700px) {
+  section.container form .col-md-4 {
+    width: 100%;
+    max-width: 100%;
+  }
+}
