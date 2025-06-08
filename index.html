@@ -274,5 +274,40 @@
   <link rel="stylesheet" href="style.css" />
   <!-- Add Bootstrap JS for interactive components (optional) -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- Script to detect language change and apply RTL if needed -->
+  <script>
+    // This script checks the <html> lang attribute and sets RTL if needed
+    function updateDirectionForLang() {
+      // List of RTL language codes
+      var rtlLangs = ['ar', 'he', 'fa', 'ur'];
+      var htmlTag = document.documentElement;
+      var lang = htmlTag.getAttribute('lang');
+      // If Google Translate is used, lang may change dynamically
+      if (lang) {
+        var langShort = lang.split('-')[0];
+        if (rtlLangs.includes(langShort)) {
+          htmlTag.setAttribute('dir', 'rtl');
+        } else {
+          htmlTag.setAttribute('dir', 'ltr');
+        }
+      }
+    }
+
+    // Run on page load
+    updateDirectionForLang();
+
+    // Observe changes to the <html> lang attribute (for Google Translate)
+    var observer = new MutationObserver(function(mutations) {
+      mutations.forEach(function(mutation) {
+        if (mutation.attributeName === 'lang') {
+          updateDirectionForLang();
+        }
+      });
+    });
+    observer.observe(document.documentElement, { attributes: true });
+
+    // Also check periodically in case Google Translate changes lang in other ways
+    setInterval(updateDirectionForLang, 1000);
+  </script>
 </body>
 </html>
