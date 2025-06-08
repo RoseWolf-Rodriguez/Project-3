@@ -154,7 +154,9 @@
 
   <!-- Three-Column Info Section with Icons and Buttons (Bootstrap) -->
   <!-- This section uses Bootstrap's grid system to create three columns with icons, descriptions, and buttons -->
-  <section class="w-100 py-5" style="background: #f8f9fa;">
+  <section 
+    class="w-100 py-5" 
+    style="background: #f8f9fa; overflow: hidden; transform: scale(0.96);">
     <div class="container-fluid">
       <div class="row text-center justify-content-center">
         <!-- First Column -->
@@ -192,6 +194,29 @@
   </section>
   <!-- Add Bootstrap Icons for the icons above -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+
+  <!-- Newsletter Signup Section -->
+  <!-- This section lets users sign up for Intel's Sustainability Newsletter -->
+  <section class="container my-5">
+    <h2 class="mb-4 text-center">Subscribe to Intel's Sustainability Newsletter</h2>
+    <!-- Simple Bootstrap form for name and email -->
+    <form class="row justify-content-center">
+      <!-- Name input -->
+      <div class="col-md-4 mb-3">
+        <label for="newsletterName" class="form-label">Name<span style="color:red;">*</span></label>
+        <input type="text" class="form-control" id="newsletterName" placeholder="Enter your name" required>
+      </div>
+      <!-- Email input -->
+      <div class="col-md-4 mb-3">
+        <label for="newsletterEmail" class="form-label">E-mail<span style="color:red;">*</span></label>
+        <input type="email" class="form-control" id="newsletterEmail" placeholder="Enter your email" required>
+      </div>
+      <!-- Submit button -->
+      <div class="col-12 text-center">
+        <button type="submit" class="btn btn-primary">Subscribe</button>
+      </div>
+    </form>
+  </section>
 
   <!-- Footer Section -->
   <footer>
