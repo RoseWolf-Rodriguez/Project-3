@@ -96,7 +96,7 @@ section > div .card-overlay {
   width: 100%;
   height: 100%;
   /* Semi-transparent dark background */
-  background: rgba(10, 25, 49, 0.85);
+  background: rgba(10, 25, 49, 0.96); /* Make overlay darker for better contrast */
   /* White text for contrast */
   color: #fff;
   /* Center text vertically and horizontally */
@@ -264,12 +264,14 @@ a:focus, button:focus, input:focus, .btn:focus {
 /* Improve color contrast for color blindness on buttons and icons */
 .btn-primary, .btn-success, .btn-warning {
   color: #fff !important;
-  text-shadow: 0 1px 1px rgba(0,0,0,0.08);
+  text-shadow: 0 1px 1px rgba(0,0,0,0.12);
+  /* Use stronger background colors for better contrast */
+  filter: brightness(0.95) contrast(1.2);
 }
 
 /* For .btn-warning, use dark text for better contrast */
 .btn-warning.text-dark {
-  color: #333 !important;
+  color: #222 !important;
 }
 
 /* Responsive adjustments for newsletter form on small screens */

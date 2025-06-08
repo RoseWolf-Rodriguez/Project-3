@@ -49,7 +49,7 @@
       <div>
         <h2>1968</h2>
         <h3>Intel Founded</h3>
-        <img src="img/1.jpg" alt="Placeholder Image" />
+        <img src="img/1.jpg" alt="Robert Noyce and Gordon Moore, founders of Intel, 1968" />
         <!-- Overlay with card text -->
         <div class="card-overlay">
           Robert Noyce and Gordon Moore rename the newly formed company 
@@ -62,7 +62,7 @@
       <div>
         <h2>1971</h2>
         <h3>First Microprocessor</h3>
-        <img src="img/2.jpg" alt="Placeholder Image" />
+        <img src="img/2.jpg" alt="Intel 4004, the world's first commercial microprocessor, 1971" />
         <div class="card-overlay">
           Intel debuts the 4004, the world's first commercial microprocessor, 
           igniting the microprocessor revolution and propelling the future 
@@ -74,7 +74,7 @@
       <div>
         <h2>1978</h2>
         <h3>8086 Processor</h3>
-        <img src="img/3.jpg" alt="Placeholder Image" />
+        <img src="img/3.jpg" alt="Intel 8086 processor, foundation of x86 architecture, 1978" />
         <div class="card-overlay">
           Launch of the 8086 processor, establishing the x86 architecture 
           that drives countless PCs and servers in the modern era.
@@ -85,7 +85,7 @@
       <div>
         <h2>1985</h2>
         <h3>386 Processor</h3>
-        <img src="img/4.jpg" alt="Placeholder Image" />
+        <img src="img/4.jpg" alt="Intel 386 processor, first 32-bit architecture, 1985" />
         <div class="card-overlay">
           Intel introduces the 386 processor with 32-bit architecture, 
           ushering in a new era of performance and multitasking for 
@@ -97,7 +97,7 @@
       <div>
         <h2>2006</h2>
         <h3>Peak GHG Emissions</h3>
-        <img src="img/green.jpg" alt="Green Sustainability Image" />
+        <img src="img/green.jpg" alt="Intel sustainability efforts, green energy, 2006" />
         <div class="card-overlay">
           This year marks Intel's highest annual greenhouse gas emissions 
           for operations. Over subsequent years, Intel invests heavily in 
@@ -110,7 +110,7 @@
       <div>
         <h2>2020</h2>
         <h3>RISE Strategy</h3>
-        <img src="img/6.jpg" alt="RISE Strategy Image" />
+        <img src="img/6.jpg" alt="Intel RISE strategy, sustainability and inclusion, 2020" />
         <div class="card-overlay">
           Intel launches its RISE (Responsible, Inclusive, Sustainable, 
           Enabling) strategy and 2030 goals, aiming to drive industry-wide 
@@ -122,7 +122,7 @@
       <div>
         <h2>2022</h2>
         <h3>Net-Zero By 2040</h3>
-        <img src="img/7.jpg" alt="Net-Zero By 2040 Image" />
+        <img src="img/7.jpg" alt="Intel net-zero greenhouse gas emissions announcement, 2022" />
         <div class="card-overlay">
           Intel announces its commitment to achieve net-zero greenhouse 
           gas emissions (Scope 1 and 2) across its global operations 
@@ -134,7 +134,7 @@
       <div>
         <h2>2023</h2>
         <h3>Renewable Electricity</h3>
-        <img src="img/8.jpg" alt="Renewable Electricity Image" />
+        <img src="img/8.jpg" alt="Intel achieves 99% renewable electricity usage, 2023" />
         <div class="card-overlay">
           The company achieves 99% renewable electricity usage worldwide, 
           helping to drastically lower carbon emissions and driving progress 
@@ -146,7 +146,7 @@
       <div>
         <h2>2024</h2>
         <h3>Sustainability Summit</h3>
-        <img src="img/9.jpg" alt="Sustainability Summit Image" />
+        <img src="img/9.jpg" alt="Intel Sustainability Summit, industry leaders collaborating, 2024" />
         <div class="card-overlay">
           Intel hosts its first Sustainability Summit, uniting suppliers, 
           government officials, and industry leaders to collaborate on 
@@ -204,22 +204,53 @@
     <section class="container my-5" aria-label="Newsletter Signup" tabindex="0">
       <h2 class="mb-4 text-center">Subscribe to Intel's Sustainability Newsletter</h2>
       <!-- Simple Bootstrap form for name and email -->
-      <form class="row justify-content-center" aria-label="Sustainability Newsletter Form">
+      <form class="row justify-content-center" aria-label="Sustainability Newsletter Form" autocomplete="on">
         <!-- Name input -->
         <div class="col-md-4 mb-3">
           <!-- Label for the name input, made bold for emphasis -->
-          <label for="newsletterName" class="form-label"><b>Name<span style="color:red;">*</span></b></label>
-          <input type="text" class="form-control" id="newsletterName" placeholder="Enter your name" required autocomplete="name">
+          <label for="newsletterName" class="form-label">
+            <b>Name<span style="color:red;">*</span></b>
+          </label>
+          <input 
+            type="text" 
+            class="form-control" 
+            id="newsletterName" 
+            name="newsletterName"
+            placeholder="Enter your name" 
+            required 
+            autocomplete="name"
+            aria-required="true"
+            aria-label="Name"
+          >
         </div>
         <!-- Email input -->
         <div class="col-md-4 mb-3">
           <!-- Label for the email input, made bold for emphasis -->
-          <label for="newsletterEmail" class="form-label"><b>E-mail<span style="color:red;">*</span></b></label>
-          <input type="email" class="form-control" id="newsletterEmail" placeholder="Enter your email" required autocomplete="email">
+          <label for="newsletterEmail" class="form-label">
+            <b>E-mail<span style="color:red;">*</span></b>
+          </label>
+          <input 
+            type="email" 
+            class="form-control" 
+            id="newsletterEmail" 
+            name="newsletterEmail"
+            placeholder="Enter your email" 
+            required 
+            autocomplete="email"
+            aria-required="true"
+            aria-label="E-mail"
+          >
         </div>
         <!-- Submit button -->
         <div class="col-12 text-center">
-          <button type="submit" class="btn btn-primary" style="color: #fff;">Subscribe</button>
+          <button 
+            type="submit" 
+            class="btn btn-primary" 
+            style="color: #fff;"
+            aria-label="Subscribe to newsletter"
+          >
+            Subscribe
+          </button>
         </div>
       </form>
       <!-- Optionally, add an aria-live region for form feedback -->
